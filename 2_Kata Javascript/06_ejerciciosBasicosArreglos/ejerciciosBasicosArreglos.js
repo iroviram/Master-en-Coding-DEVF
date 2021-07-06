@@ -69,26 +69,18 @@ Crea un programa que pregunte al usuario un número. Mostrar los números que so
 
 */
 
-var num = prompt("Ingresa un numero entero cualquiera:");
-cont = 0;
-var multiplos = [];
-while(cont <= num){
-    if(cont%5==0){
-        multiplos.push(cont);
-    }
-    cont=cont+1;
-}
-console.log("Los siguientes numeros son multiplos de 5: " + multiplos);
 
 var num = parseInt(prompt("¿Teclea un número?"));
 console.log("Número tecleado: ", num)
+var multiplo5 = [];
 i=1
 while (i<=num) {
     if(i%5 == 0) {
-        console.log(i)
+        multiplo5.push(i);
     }
     i++;
 }
+console.log("Los siguientes numeros son multiplos de 5: " + multiplo5);
 
 
 /*
@@ -98,7 +90,19 @@ Ejercicio 5
 Crea un programa que solicite al usuario 2 números entre 1 y 50. Posteriormente mostrar en consola los números del 1 hasta el 50, pero añadir el mensaje “¡Lotería!” solo al mostrar los números indicados por el usuario.
 */
 
+var num1 = parseInt(prompt("Teclea dos numeros entre 1 y 50.\nCual es el primer numero?"));
+console.log("Tu primer numero es: " + num1);
+var num2 = parseInt(prompt("Cual es el segundo numero?"));
+console.log("Tu primer numero es: " + num2);
 
+var i = 1;
+while (i < 51){
+    console.log(i);
+    if(i==num1 || i==num2){
+        console.log(" ¡Lotería!");
+    }
+    i++;
+}
 
 /*
 
@@ -106,3 +110,12 @@ Ejercicio 6
 
 Crea un programa que solicite al usuario letras o palabras, si es así guardar el resultado. Para terminar de capturar el usuario no debe escribir valor alguno. Al terminar de capturar, mostrar en pantalla la concatenación de todas las palabras capturadas.
  */
+
+var arregloPalabras = [];
+var userInput;
+while (!(userInput=="")){
+    userInput = prompt("Ingresar cualquier letra o palabras: ");
+    arregloPalabras.push(userInput);
+}
+
+console.log("Introduciste estas letras y palabras: " + arregloPalabras.join(" "));
