@@ -1,0 +1,486 @@
+2. HTML
+
+================================
+
+Estructura basica de HTML5
+
+Todo va dentro de la etiqueta <body>
+
+<header>
+
+metadatos, que nos ayudan a la web a posicionarlas en bases de datos de google.
+
+<nav>
+
+menu de navegacion
+etiqueta dentro de otra etiqueta
+
+va dentor de la etiqueta <header>
+
+<article>
+
+donde se encuentran las <section> la parte principal
+
+<aside>
+
+publicidad, popups, chat, juegos, que hacen algunos streamers, etc
+
+<footer>
+
+pie de articulo, como en word
+
+
+================================
+
+HTML ha sufrido algunos cambios en el tiempo y actualmente estamos en la quinta iteración, por eso se llama HTML 5
+
+
+Landing Page: En la mercadotecnia en internet, se denomina página de aterrizaje a una página web a la que una persona llega tras pulsar en el enlace o botón en una guía, un portal o algún banner o anuncio de texto situado en otra página web, aplicación, red social, correo electrónico o portal de internet.
+
+================================
+
+Sintaxis
+
+Opening tag
+<p>
+
+Content
+My cat is grumpy
+
+Closing tag
+</p>
+
+Element
+<p> My cat is grumpy </p>
+
+==================================
+
+Atributos
+
+Los elementos tambien pueden tener atributos
+
+<p class="editor-note">My cat is grumpy</p>
+
+==================================
+
+Factores importantes para que usuarios no se queden en website
+
+- Sitio estatico
+- Sin boton call-to-action, sin interaccion
+- La competencia hace mcuho mejor trabajo, marketing, redes sociales, inversion, etc
+
+=================================
+
+Como order los atributos de los elementos html
+
+El objetivo es facilitar la lectura del codigo, es seguir una buena practica o tener un codigo mas limpio.
+
+=================================
+
+Order de Atributos
+
+Los atributos HTML deben venir en este order
+
+- class
+- id, name
+- data-*
+- arc,,,,for type href value
+- title, alt
+- role, aria-*
+
+Las clases son excelentes componentes reutilizables, por lo que son lo primero.
+Los ids son mas especificos y deben utilizarse con moderacion (como para marcadores en la pagina), por que son segundos.
+
+=================================
+
+Accesibilidad
+
+No hacer
+<h1>Cabecera nivel 1</h1>
+<h3>Cabecera nivel 3</h3>
+<h4>Cabecera nivel 4</h4>
+
+Si hacer
+<h1>Cabecera nivel 1</h1>
+<h2>Cabecera nivel 2</h2>
+<h3>Cabecera nivel 2</h3>
+
+Una forma tipica de navegacion que utilizan las personas no videntes es moverse a traves de la pantalla con las eqituqetas de encabezado. De esta forma, pueden conocer rapidamente el contenido de la pagina en poco tiempo
+
+=================================
+
+
+Intro a HTML
+index.html
+
+
+=================================
+
+<li></li>
+list item
+
+<ul></ul>
+unordered list
+
+<ol></ol>
+ordered list
+
+<h1></h1>
+heading
+
+<p></p1>
+paragraph
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+=================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

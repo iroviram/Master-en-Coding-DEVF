@@ -1,0 +1,48 @@
+Introduccion a CSS: Creacion de Layouts
+
+////////
+
+
+Creando Layouts
+
+La layout o estructura es un equema de la distribucion de los elementos dentro de una pagina web.
+
+Se compone de una serie de bloques de ciertas dimensiones en los que se colacara el contenido.
+
+Estos bloques suelen trazarse a traves de etiqutas HTML comunes, como div, o semanticas, como header, nav, section ,article, aside y footer, incorporadas en HTML5.
+
+///////////
+
+Float y Clear
+
+Float quita a un elemento del flujo normal de la pagina y lo coloca a la izquierda o derecha del resto del contenido de su elemento padres (se lo hace "flotar" hacia uno u otro costado).
+
+Con  clear se especifica que un elemento no admite un flotante (en cualquier lado). Tambien se la puede usar en un elemento flotante para impedir que otros flotantes puedan quedar sobre algunos de sus costados.
+
+float:none;	clear:both;
+float:right;	clear:right;
+float:left;	clear:left;
+
+////////////
+
+
+Position
+
+static: Flujo normal. Se ignoran los valores de las propiedades top, right, bottom y left.
+
+relative: Se desplazan primero de acuerdo a su posicion normal en el documento, luego se mueve con respecto a top, right, bottom y left, pero sin que su desplazamiento afecte a otros elementos.
+
+absolute: El elemento es removido del flujo normal del documento. El desplazamiento de la caja tambien se controla con las propiedades top, right, bottom y left, pero tomando como base su contenedor padre relativo mas cercano si no toma el contenedor inicial.
+
+fixed: El elemento es removido del flujo normal del documento. Su desplazamiento se controla con top, right, bottom y left tomando como referencia el viewport.
+
+
+///////////////
+
+
+
+
+
+
+
+ 

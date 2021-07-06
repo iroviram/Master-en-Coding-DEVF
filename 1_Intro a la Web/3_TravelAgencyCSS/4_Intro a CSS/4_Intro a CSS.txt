@@ -1,0 +1,154 @@
+Intro a CSS: Box Model, Divs y Display
+
+///////////
+
+Box Model
+
+Todo navegador renderiza cada elemento de la pagina en forma rectangular.
+El modelo de caja tiene cada elemento rectangular:
+
+1. Content: El contenido en si
+2. Padding: Relleno/Espacio Interior
+3. Border: La linea del borde
+4. Margin: Margen/Espacio Exterior
+
+
+top margin
+top border
+top padding
+
+Box-sizing: content-box;
+Box-sizing: border-box;
+
+content	| right padding | top border | top padding
+
+bottom padding
+bottom border
+bottom margin
+
+//////////////
+
+Width y Height
+
+width: 800px
+height: 700px
+
+//////////////
+
+Padding
+
+Se refiere al espacio interior del modelo de caja
+
+Sirve comunmente crear un espacio entre el contenido y el borde de la caja
+
+//////////////
+
+Borders
+
+Se refiere al borde de la caja, y se coloca al final del padding, sirve con fines esteticos.
+
+border: color tamano forma
+border: black 5px solid;
+border: black 5px dashed;
+border: black 5px dotted;
+
+
+/////////////
+
+Margin
+
+Se refiere al espacio exterior del modelo de cajaa. Sirve para distanciar una caja de otra.
+
+////////////
+
+Maneras de Usar el Box Model
+
+Funciona con margin, padding, border.
+
+p {
+   padding:10px, 5px 5px 10px;
+}
+
+p {
+   padding: TOP RIGHT BOTTOM LEFT;
+}
+
+p {
+   paddin: 10px (top) 5px (right and left) 10px (bottom);
+}
+
+
+p {
+   padding: 8px (top and bottom) 12px (right and left);
+}
+
+
+//////////////
+
+
+Div
+
+se usan como contenedores. 
+Usar div o section en HTML es maquetar el sitio dando los respectivos margin & padding.
+
+
+//////////////////
+
+z-index
+
+Sirve para indicar que elemento iria encima y cual debajo en caso de que 2 elementos se sobrepongan, como si el documento tuviera profundidad.
+
+Cosas interesantes saber:
+
+- Por defecto, t odos los elementos tienen asignado un valor de z-index es auto, que orresponde a 0.
+
+- Un valor mayor hara que este se coloque delante de elementos co  valopres menores.
+
+- Esposible usar valores en negatiovo.
+
+////////////////
+
+Div (division)
+
+Es un contenedor generico sin un significado semantico en particular.
+
+Sirve para crear secciones o agrupar contenidos con fines mayormente esteticos (donde usamos atributos como class y/o id para ello).
+
+Es buena practica solo usarlo cuando existan casos en que no corresponda usar etiquetas como : <main>, <header> <footer>, <nav>, <article> o <section>.
+
+//////////////////
+
+Display
+
+Esta propiedad nos ayuda a indicar el comportamiento de las "cajas" con respecto a otras "cajas".
+
+Las propiedades basicas del display son:
+
+- block: hace que el comportamiento del elemento sea como un bloque, Desplazando els iguiente bloque a la siguiente linea. (si padding, margin y width)
+
+- inline: el elemento se renderizara en linea con otros elementos (se coloca uno al lado de otro). (no padding, margin ni width)
+
+- inline-block (si padding, margin y width)
+
+
+block
+block
+inline inline inline
+block
+inline-block inline-block
+inline inline inline-block
+
+////////////////////
+
+Backgrounds
+
+Algunas propiedades:
+
+background-image: url("mi-imagen.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+background-size: 100px 100px;
+background: linear-gradient (to right, green, yellow, orange, red)
+
+

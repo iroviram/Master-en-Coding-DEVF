@@ -1,0 +1,91 @@
+7. Intro a Git y Github
+
+//////////////////
+
+Git es un sistema de control de versiones
+
+//////////////////
+
+Sistema de Control de Versions (VCS)
+
+Es aquel que nos permite llevar un historial y control de cambios a medida que las personas y los equipos colaboran en proyectos juntos.
+
+//////////////////
+
+Tipos de VCS
+
+Local Computer (Local)
+
+Central VCS Server (Centralizado)
+
+//////////////////
+
+Git
+
+es un VCS de tipo distribuido de codigo abierto ac
+
+/////////////////
+
+Repositorio
+
+Es un espacio de almacenamiento donde se organiza, mantiene y difunde informacion.
+
+En el caso de Git el repositorio viene siendo el proyecto donde estara la coleccion de archivos y carpetas junto al historial de ambos.
+
+//////////////////
+
+Estados de Git
+
+working directory (git init / git clone)
+
+> git add
+
+staging area (git add)
+
+> git commit
+
+repository (git commit) 
+
+/////////////////
+
+Ramas (Branch)
+
+Son bifurcaciones o variantes de un repositorio, estas pueden contener diferentes archivos y carpetas o tener todo igual excepto por algunas lineas de codigo.
+ 
+      /----O-----O (Dev)
+     /
+O--O---O---O------O---O (Main)
+             \__O___O___
+
+Main = rama principal
+Dev = subrama
+
+///////////////////
+
+git != github
+
+///////////////////
+
+Configuracion de Git
+
+Desde consola, se puede acceder a la configuracion de Git con el comando:
+
+git config
+
+Se recomienda establecer una identidad en Git, para ello se usan los comandos:
+
+git config user.name iroviram
+git config user.email
+
+Usando el flag "--global" podemos establecer la configuracion de forma global y realizarla una sola vez.
+
+git config --global user.name "devf"
+
+git config --global user.email "email address"
+git config --global user.name "github's username"
+
+
+
+
+
+

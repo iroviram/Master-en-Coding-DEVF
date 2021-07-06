@@ -1,0 +1,155 @@
+CSS
+
+Cascading Style Sheets
+
+Describe como se va a mostrar un documento en la pantall o como se va a imprimir..
+
+Caracteristicas
+
+- Disenio
+- Responsivo
+- Independencia
+- Mantenimiento
+
+/////////
+
+Sintaxis Basica
+
+Consiste en uno o mas SELECTORES (QUIEN? - sujeto)
+H1, P, BODY, id
+
+seguido de una declaracion (QUE? - predicado)
+proviedad:valor
+
+p (selector) {
+	color (propiedad): red (valor de propiedad);
+  }
+
+///////////
+
+Y como lo uso?
+
+CSS puede usarse de 3 formas
+
+1. En el HTML (Interno) - Entre el <HEAD> y </HEAD>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        color:red;
+    </style>
+</head>
+
+2. Inline (En Linea) - Con el HTML en el <body>
+
+<section>
+        <h1 style="color:red;">Viajar con nosotros es 
+</section>
+
+3. Externo - Referenciado en HTML/CSS (mas recomendable)
+
+<head>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+style.css (como archivo externo)
+h2{
+	color:blue;
+}
+
+esto es llamado mas arriba.
+
+///////////////////
+
+Selectores (el QUIEN?)
+
+Es la primera parte de una regla CSS que indica al navegador que elementos HTML se seleccionan para aplicarles dicha regla
+
+Por etiqueta: h1, body, p, etc.
+body{
+	height: 100;
+	width: 100%;
+}
+
+Por clase
+.class{
+	background-color: aquamarine;
+}
+
+Por id
+#id{
+	margin: 2px
+	font-size 12px;
+}
+
+
+///////////////////
+
+En CSS: El Order de los Factores SI altera el producto
+
+Cuando dos reglas tienen la misma especificidad, se aplica la que aparece en ultimo lugar en el CSS.
+
+
+////////////////////
+
+Color y Tipos de Colores en CSS
+
+- Color Names
+- HTML5 Color names
+- Hexadecimal
+- RGB
+
+body {
+	color:red;
+	background:coral
+}
+
+h1 {
+	color: #00ff00;
+}
+
+p {
+	color: rgb(0,0,255);
+}
+
+color picker
+
+
+/////////////
+
+font-family: Familias de Fuentes Web Safe
+
+Las fuentes Web Safe con aquellas que normalmente vienen instaladas en los SO por defecto y garantizan una correctga visualizacion
+
+Arial
+Verdana
+Helvetica
+Tahoma
+Trebuchet MS
+Times New Roman
+Georgia
+Garamond
+Courier New
+Brush Script MT
+
+font-family:Arial, sans-serif
+
+sans-serif (sin serif, que es el remate en las letras)
+
+//////////////
+
+Otras propiedades con font
+
+font-weight: bold
+
+font-style: italic
+
+font-variant: small-caps
+
+text-transform: uppercase
+
+font-size:40px;
+
+///////////////
+
+

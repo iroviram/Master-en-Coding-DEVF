@@ -1,0 +1,98 @@
+1. Intro a la Web
+
+Web != Internet
+
+///// > Arquitectura / Cliente-Servidor
+
+Clients > Internet > Server
+
+IP se clasifican en dos principales
+IP ORIGEN: DE DONDE SALE EL PAQUETE
+IP DESTINO: A DONDE LLEGAN ESOS PAQUETES
+
+HTTP
+SNMP - Simple Network Map Protocol
+Socket - IP mas corto
+
+///// > Direcciones IP
+
+Las direcciones IP (Internet Protocol) son un numero unico e irrepetible con el cual se identifica un dispositivo (computadora, laptop, smartphone, tablet, etc) conectada a un red que corre el protocolo IP.
+
+///// > Dominio (Domain)
+
+Su proposito principal es poder nombrar a las direcciones IP de cada activato en la red, a terminos memorizables y amigables con los seres humanos.
+
+www.devf.la > 187.33.205.15
+
+///// > Localhost (127.0.0.1)
+
+localhost es un nombre reservado que tienen todos los dispositivos
+
+///// > DNS
+
+El sistema de nombre de dominios (DNS - Domain Name System) es el "directorio telefonico" de Internet.
+
+El DNS traduce nombres de dominio a direcciones IP para que los navegadores puedan cargar los recursos de Internet.
+
+Traducen los nombres de dominio que tu recuerdas en numeros llamados direcciones IP.
+
+///// > DNS Root Servers
+
+Es la columna vertebral que soporta Internet, puesto que son "la fuente de la verdad" en cuanto a resolucion de nombres se refiere. Su gestion basica es responsabilidad de la ICANN (Internet Corporation for Assigned Names and Numbers).
+
+http://root-serevers.org/
+
+///// > Propagacion de DNS
+
+https://www.whatsmydns.net/#NS
+
+///// > Hospedaje (Hosting)
+
+Un hosting es un servicio en linea donde alquilamos un espacio en un servidor donde puedes almacenar todos los archivos y datos necesarios permitirnos publicar un sitio o aplicacion web en Internet
+
+https://www.akky.mx
+https://www.hostinger.mx
+
+El sistio (casa)
+Nombre de Dominio (direccion)
+Alojamiento Web (tierra)
+Internet (calle)
+
+Es mejor pagar por un Hosting, que mantenerlo
+
+///// > Puertos y su relacion con Direcciones IP
+
+184.34.201.20:80
+
+Los " : " indican el numero interior o puerto
+
+Puertos Comunes
+puertos que ya estan nombrados para ciertos usos
+
+http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-sg-es-4/ch-ports.html
+
+Puerto 80 - https
+
+
+///// > Frontend vs Backend
+
+Front-end - la parte con la que interactua el usuario (Facebook, Google, Youtube). La parte visual.
+
+Back-end - la parte que nose ve, lo programado. La parte de atras que soporta la parte visual
+
+
+
+
+///// > 
+
+
+
+
+
+///// > 
+
+
+
+
+
+///// > 

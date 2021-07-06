@@ -1,0 +1,150 @@
+1. Tecnologias Web
+
+========================================
+
+Web Development
+
+HTML - Hypertext Markup Language - The Builder
+
+CSS - Cascading Style Sheets - The Builder
+
+JS - Javascript - The Wizard
+
+========================================
+
+< Editores de Codigo >
+
+ATOM
+Sublime Text
+VS Code
+
+https://code.visualstudio.com
+
+========================================
+
+< Practica >
+
+about:blank
+right click
+Inspecct
+Console
+alert("holamundo")
+
+
+
+========================================
+
+< VS Code >
+
+Guardar extension de archivo como HTML, para que VS Code identifique el lenguaje como HTML
+
+Plaint Text > Especificar el tipo de lenguaje (ej, HTML)
+
+========================================
+
+< Stack Overflow >
+
+El yahoo respuestas de los programadores
+
+
+========================================
+
+< Chrome developer tools >
+
+wappalyzer
+
+
+========================================
+
+< Git y Github >
+
+Github es un repositorio donde se suben 
+
+Git - distribucion de linux,bashscript
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================
+
+<  >
+
+
+
+
+========================================

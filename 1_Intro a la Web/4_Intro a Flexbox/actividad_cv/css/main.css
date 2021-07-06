@@ -1,0 +1,218 @@
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{   
+    background: #7474BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #323232;
+    text-rendering: optimizeLegibility;
+    font-family: 'Cambay', sans-serif;    
+    min-height: 99vh;
+}
+
+header{
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 10px;
+    width: 99%;
+}
+
+.profile {
+    margin-top: 7px;
+    display: flex;
+    flex-flow: row  wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 12px 12px 12px;
+    border-color: black;
+    border-style: double;
+    /*background: #FFEFBA;  /* fallback for old browsers */
+    flex: 0 0 100%;
+  }
+
+.mytitle  h2 {
+    justify-content: flex-end;
+    color: #000;
+    font-size: 25px;
+    text-transform: uppercase;
+    }
+
+.social-media {
+      padding: 3.5px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+  }
+
+  .linkedin {
+      padding-right: 10px;
+  }
+
+.social-media :hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: purple;
+    
+  }
+
+  .avatar{
+      margin-left: 40px;
+      border-radius: 50%;
+      width: 115px;
+      height: 115px;
+  }
+
+  main {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      flex: 0 0 auto;
+  }
+
+  main :hover{
+      background-color: #ffb3bc;
+  }
+  
+.experience{
+    border-color: black;
+    border-style: double;
+    background-color: #ffdde1;
+    
+    width: 450px;
+    height: 300px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+
+
+.parent_experience {
+    display: inline-flexbox;
+    flex-direction: column;
+    padding:10px;
+    flex-wrap: wrap;
+}
+
+.parent_experience div h3{
+    font-size: 20px;
+}
+
+.parent_experience div p{
+    font-size: 15px;
+}
+
+.workforce{
+    padding-bottom: 10px;
+}
+
+.procurement{
+    padding-bottom: 10px;
+}
+
+.service_desk{
+    padding-bottom: 10px;
+}
+
+.education{
+    border-color: black;
+    border-style: double;
+    background-color: #ffdde1;
+    width: 450px;
+    height: 300px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.education div{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.education div h3{
+    font-size: 20px;
+}
+
+.education div p{
+    font-size: 15px;
+}
+
+.education .education_div1{
+    padding-bottom: 10px;
+}
+
+.languages {
+    border-color: black;
+    border-style: double;
+    background-color: #ffdde1;
+    width: 450px;
+    height: 300px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+
+
+.languages_child{
+    display: inline-flexbox;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.languages_child1{
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.certifications{
+    border-color: black;
+    border-style: double;
+    background-color:#ffdde1;
+    width: 450px;
+    height: 300px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.certifications_child{
+    display: inline-flexbox;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.certifications_child1{
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+/* AQUI INICIAN LAS MEDIA QUERIES */
+/* ESTILOS PARA TABLETS */
+
+@media screen and (max-width: 1000px){
+    body{
+        flex-direction: column;
+    }
+
+    .profile, .mytitle{
+        justify-content: space-around;
+    }
+    .social-media{
+        justify-content: center;
+    }
+}

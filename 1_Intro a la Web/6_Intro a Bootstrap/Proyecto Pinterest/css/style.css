@@ -1,0 +1,238 @@
+
+navbar{
+    display: flex;
+    flex-flow: row nowrap;
+    height: 80px;
+    margin-left: 12px;
+}
+
+.pinterest{
+    max-width: 48px;
+    border-radius: 24px;
+}
+
+.pinterest:hover{
+    background-color: #EFEFEF;
+}
+
+.collapse1{
+    max-width: 73px;
+    border-radius: 24px;
+    background-color:#111111;
+    font-weight: bolder;
+    border-radius: 24px;
+}
+
+.collapse1 a {
+    color: white !important;
+}
+
+.collapse1:hover{
+    cursor: pointer;
+}
+
+.collapse2{
+    max-width: 63px;
+    font-weight: bolder;
+    border-radius: 24px;
+}
+
+.collapse2 a{
+    color: black !important;
+}
+
+.collapse2:hover{
+    background-color:#EFEFEF;
+    cursor: pointer;
+}
+
+.nav-item{
+    margin-left: 15%;
+}
+
+.form-control{
+    border-radius: 24px;
+    width: 1053px;
+}
+
+.right-buttons{
+    float: right;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.notifications{
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+}
+
+.notifications:hover{
+    background-color:#EFEFEF;
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+.notifications button{
+    border: 0%;
+    padding:0%;
+    border-radius: 24px;
+    position: relative;
+    top: 9px;
+    left: 10px;
+    background-color: transparent;
+    border-color: transparent;
+
+}
+.notifications button:active{
+    border-radius: blue;
+    color:red;
+    background-color: yellow;
+}
+
+.inbox{
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+}
+
+.inbox img{
+    height: 24px;
+    width: 24px;
+}
+
+.inbox:hover{
+    background-color:#EFEFEF;
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+.inbox button{
+    border: 0%;
+    padding:0%;
+    border-radius: 24px;
+    position: relative;
+    top: 9px;
+    left: 10px;
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
+.profile{
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+}
+
+.profile img{
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+}
+
+.profile:hover{
+    background-color:#EFEFEF;
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+.profile a{
+    border: 0%;
+    padding:0%;
+    border-radius: 24px;
+    position: relative;
+    top: 9px;
+    left: 11px;
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
+.accounts {
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+}
+
+.accounts:hover{
+    background-color:#EFEFEF;
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+.accounts img{
+    height: 24px;
+    width: 24px;
+}
+
+.accounts a{
+    border: 0%;
+    padding:0%;
+    border-radius: 24px;
+    position: relative;
+    top: 9px;
+    left: 11px;
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
+
+
+/* CARDS */
+
+:root {
+    --card_width: 250px;
+    --row_increment: 10px;
+    --card_border_radius: 16px;
+    --card_small: 26;
+    --card_med: 33;
+    --card_large: 45;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+}
+
+.pin_container {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card_width));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+
+    background-color: white;
+}
+
+.card {
+    padding: 0;
+    margin: 15px 10px;
+    border-radius: var(--card_border_radius);
+    background-color: red;
+}
+
+.card_small {
+    grid-row-end: span var(--card_small);
+    background-image: url(https://cdn5.dibujos.net/dibujos/pintados/202006/un-avion-de-pasajeros-vehiculos-aviones-11698760.jpg);
+    
+}
+
+.card_medium {
+    grid-row-end: span var(--card_med);
+}
+
+.card_large {
+    grid-row-end: span var(--card_large);
+}
