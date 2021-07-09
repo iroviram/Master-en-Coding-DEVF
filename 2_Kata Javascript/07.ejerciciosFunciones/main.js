@@ -12,7 +12,7 @@ document.write("Ejercicio 1. Convierte grados Centigrados a Fahrenheit")
 document.write("<br>")
 
 function gradosFahrenheit (){
-    var gradosCentigrados = prompt("Convierte grados Centigrados a Fahrenheit.\nIngresa cantidad de grados Centigrados:")
+    var gradosCentigrados = prompt("Ejercicio 1.\nConvierte grados Centigrados a Fahrenheit.\nIngresa cantidad de grados Centigrados:")
     var convertidorF = (gradosCentigrados * 9/5) + 32;
     document.write(`${gradosCentigrados} grados Centigrados equivale a ${convertidorF} grados Fahrenheit`)
 }
@@ -30,7 +30,7 @@ document.write("Ejercicio 2. Tabla de Multiplicar")
 document.write("<br>")
 
 function tablaMultiplicar (){
-    var numeroMultiplicar = prompt("Ingresa el numero del que quieras ver su tabla de multiplicar: ")
+    var numeroMultiplicar = prompt("Ejercicio 2.\nIngresa el numero del que quieras ver su tabla de multiplicar: ")
     
     for (var index = 0; index < 10; index++) {
            document.write(`${numeroMultiplicar} x ${index} = ${numeroMultiplicar * index}`+"<br>")     
@@ -56,7 +56,7 @@ function numNaturales(numUser) {
     }
 
 }
-numUser = prompt("Ingresa hasta que numero se contara: ");
+numUser = prompt("Ejercicio 3.\nIngresa hasta que numero se contara: ");
 numNaturales(numUser);
 
 document.write("<br><br>")
@@ -75,7 +75,7 @@ function numNaturalesB(numUser) {
         document.write(i+"<br>")
     }
 }
-numUser = prompt("Ingresa hasta que numero se contara: ");
+numUser = prompt("Ejercicio 4.\nIngresa hasta que numero se contara: ");
 numNaturalesB(numUser);
 
 document.write("<br><br>")
@@ -86,13 +86,23 @@ document.write("<br><br>")
 |     si es vocal o consonante                 |
 ------------------------------------------------*/
 
-document.write("Ejercicio 6. Vocal o Consonante")
+document.write("Ejercicio 5. Vocal o Consonante")
 document.write("<br>")
 
-function tipoLetra() {
-    var letra = prompt("Ingresa una letra y te diremos si es vocal o consonante:")
-    document.write(typeof element == "number")
+function tipoLetra(letra) {
+    var vocal = ["a","i","u","e","o","A","I","U","E","O"]
+    var consonante = true;
+    for (var i = 0; i < vocal.length; i++) {
+        if (letra == vocal[i]){
+            document.write(`Tu letra ${letra} es una vocal`)
+            consonante = false;
+        }
+    }   if (consonante) {
+        document.write(`Tu letra ${letra} es una consonante`)
+    } 
 }
+var letra = prompt("Ejercicio 5.\nIngresa una letra y te diremos si es vocal o consonante:")
+tipoLetra(letra);
 
 document.write("<br><br>")
 
@@ -100,6 +110,21 @@ document.write("<br><br>")
 |6.- Escriba una función donde solicite un    |
 | número al usuario y me calcule su factorial |
 ----------------------------------------------*/
+
+document.write("Ejercicio 6. Calcular Factorial")
+document.write("<br>")
+
+function factorial(numUser7) {
+    var total = 0;
+    for (var i = 0; i <= numUser7; i++) {
+        total = total + i;
+    }
+    return total;
+}
+
+var numUser7 = prompt("Ejercicio 6.\nIngresa una numero y te calcularemos su factorial:")
+factorial(numUser7);
+document.write(`El Factorial de ${numUser7} es ${factorial(numUser7)}`);
 
 document.write("<br><br>")
 /*--------------------------------------------
