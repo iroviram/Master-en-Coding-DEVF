@@ -1,0 +1,21 @@
+REALICE UN DIAGRAMA DE FLUJO, PSEUDOCÓDIGO Y CÓDIGO PARA LOS SIGUIENTES
+PROBLEMAS
+Ejercicio 1
+-------------------------------------------------------
+|Almacenen 3 números en 3 variables A, B y C.         |
+|deseamos saber cual es el mayor y cual es el menor   |
+-------------------------------------------------------
+
+
+Ejercicio 2
+--------------------------------------------
+| Escribir los 100 primeros números pares  |
+--------------------------------------------
+
+
+Ejercicio 3
+-----------------------------------------------------------
+|Ingresar el precio de un producto, luego imprimir el     |
+|precio final considerando que se aplicará un 15%         |
+|de descuento                                             |
+-----------------------------------------------------------
