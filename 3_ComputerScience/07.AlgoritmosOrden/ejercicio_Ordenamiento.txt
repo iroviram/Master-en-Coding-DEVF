@@ -1,0 +1,17 @@
+Ejercicios ordenamiento
+
+1. Crea una función que ordene de forma descendente  un arreglo de números
+    a. Ej. Entrada --> [9,3,1,6,5,88,-1,2,7] 
+    b. Salida → [88,9,7,6,5,3,1,-1]
+
+2. Crear una función que ordene una lista de caracteres según su valor decimal de acuerdo a la tabla ascii ref: http://www.asciitable.com/
+    a. Ej. Entrada ---> ['b','h','w','e','a']
+    b. Salida ----> ['a','b','e','h','w']
+
+3. Crear una clase Alumno con los siguientes datos:
+    a. Nombre y calificaciones(arreglo de 5 números) y tiene un método para obtener el promedio
+    b. Crear otra clase llamada Salon que tenga un método que ordene alumnos de mayor a menor promedio
+
+4. Crear una funcion que ordene palabras de menor numero de letras a mayor
+    a. Ej Entrada ["adios","hola","maximo","uno","despedida"]
+    b. salida -> [""uno,"hola","adios","maximo","despedida"]
