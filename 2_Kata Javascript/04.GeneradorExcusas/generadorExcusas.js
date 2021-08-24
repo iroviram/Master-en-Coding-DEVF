@@ -49,7 +49,7 @@ console.log(posicionA);
 // Paso 3: Armo mi excusa, concatenado el valor de los arreglos de forma aleatoria
 
 var excusa = columnaA[posicionA] + " " + columnaB[posicionB] + " " + columnaC[posicionC];
-document.write(excusa);
-
+//document.write(excusa);
+console.log(excusa)
 
 

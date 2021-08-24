@@ -43,7 +43,8 @@ imprimir una advertencia.
 
 
 function MayorEdad(){
-    var edad = prompt("HOLA, CUANTOS ANOS TIENES?")
+    //var edad = prompt("HOLA, CUANTOS ANOS TIENES?")
+    var edad = 18;
     if (edad >=18){
         console.log("ERES MAYOR DE EDAD")
     }else if (edad < 18) {
