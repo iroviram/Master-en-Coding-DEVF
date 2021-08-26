@@ -1,0 +1,67 @@
+// 01.Crear una función que dado un año determine si es un año bisiesto o no. Ej---> isLeap(2016) Resultado ----> true
+
+// 02.Crear una función que genere un numero aleatorio entre 1 y 10, esta función recibe un numero como parametro si el numero es igual al numero generado aleatoriamente regresara "Buen Trabajo" de lo contrario regresara "Intenta de nuevo". Ej ---> randomGuess(7) resultado ---> "Buen trabajo" o "Intenta de Nuevo"
+
+// 03.Escribe una función que reciba un string como parametro y regrese el string con "Py" al principio, si el string ya tiene "Py" regresar el string original Ej ---> addPy("hola") resultado ---> "Pyhola"
+
+// 04.Escriba un programa JavaScript para crear una nueva cadena a partir de una cadena dada cambiando la posición del primer y último carácter. La longitud de la cadena debe ser mayor o igual a 1. Ej ----> firstLast("Hola") resultado ---> "aolH"
+
+// 05.Escriba un programa JavaScript para cambiar el uso de mayúsculas en todas las letras de una cadena determinada. Ej ---> changeMayus("ComoEstas") resultado ---> "cOMOeSTAS"
+
+--
+
+/ Problema 1
+console.log("----Problema 1--------")
+const isLeap= (year)=>{
+  return year%4==0 
+}
+// Test
+console.log(isLeap(1997))
+console.log(isLeap(1988))
+console.log(isLeap(1996))
+console.log(isLeap(1995))
+// Problema2
+console.log("----Problema 2--------")
+const randomGuess= (number)=>{
+  let test= Math.floor(Math.random()*10)+1
+  return test==number? "Buen Trabajo": "Intenta de Nuevo"
+}
+// Test
+console.log(randomGuess(7))
+// Problema3
+console.log("----Problema 3--------")
+const addPy=(string)=>{
+  let firstTwo=string.slice(0,2)
+  return firstTwo.toLowerCase()=="Py".toLowerCase()? string :`Py${string}`
+}
+// Test
+console.log(addPy("Hello"))
+console.log(addPy("Python"))
+// Problema4
+console.log("----Problema 4--------")
+const exchange= (string)=>{
+  let splitter=string.split("")
+  let temp=splitter[0]
+  splitter[0]=splitter[splitter.length-1]
+  splitter[splitter.length-1]=temp
+  return splitter.join("")
+}
+// Test
+console.log(exchange("magic"))
+console.log(exchange("Hola"))
+// Problema 5
+console.log("----Problema 5--------")
+const viceversa=(string)=>{
+  let result=""
+  for(let i=0;i<string.length;i++){
+    if(string[i]==string[i].toUpperCase()){
+      result+=string[i].toLowerCase()
+    }else{
+      result+=string[i].toUpperCase()
+    }
+  }
+  return result;
+}
+// Test
+console.log(viceversa("HolaMundo"))
+console.log(viceversa("ROgerURRuTIA")) (edited) 

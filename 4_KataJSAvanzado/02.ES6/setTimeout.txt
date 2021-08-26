@@ -1,0 +1,3 @@
+setTimeout(function() {
+  console.log("He ejecutado la función");
+}, 2000);
