@@ -1,0 +1,98 @@
+//01. Escriba una función de JavaScript que devuelva una cadena pasada con letras en orden alfabético. Ej orderWord("webmaster") resultado ---> "abeemrstw"
+
+//? 02.Escriba una función de JavaScript para eliminar. Valores 'nulo', '0', '""', 'falso', 'indefinido' y 'NaN' de una matriz. Ej removeFalsy([NaN, 0, 15, false, -22, '',undefined, 47, null]) resultado ----> [15, -22, 47]
+
+//? 03.Escriba una función de JavaScript para ordenar la siguiente matriz de objetos por valor de título. let ibrary = [ { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254}, { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264}, { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245} ];
+
+//? 04. Realizar una función que devuelva un numero arreglo que incluya la masa corporal de cada objeto:
+const team = [
+    {name:"Edwin", weight:70, height:1.8},
+    {name:"Raúl", weight:60, height:1.7},
+    {name:"Mali", weight:40, height:1.5},
+];
+Nota: imc = peso / (estatura*2)
+*/
+
+/* RETO ADICIONAL
+Usando la siguiente "base de datos":
+const Database = {
+    "responses": [
+        {
+            "question": "¿te gusta el pan?",
+            "answers": {
+                "2020-01-01": [{
+                    "answer": "SI",
+                    "selected": true
+                }, {
+                    "answer": "SI",
+                    "selected": true
+                }, {
+                    "answer": "SI",
+                    "selected": true
+                }, {
+                    "answer": "NO",
+                    "selected": true
+                }],
+                "2020-02-02": [{
+                    "answer": "NO",
+                    "selected": true
+                }, {
+                    "answer": "SI",
+                    "selected": true
+                }, {
+                    "answer": "SI",
+                    "selected": true
+                }]
+            }
+        },
+        {
+            "question": "¿te gusta el queso?",
+            "answers": {
+                "2020-01-01": [{
+                    "answer": "SI",
+                    "selected": true
+                }, {
+                    "answer": "NO",
+                    "selected": true
+                }, {
+                    "answer": "NO",
+                    "selected": true
+                }, {
+                    "answer": "NO",
+                    "selected": true
+                }],
+                "2020-02-02": [{
+                    "answer": "SI",
+                    "selected": true
+                }, {
+                    "answer": "NO",
+                    "selected": true
+                }, {
+                    "answer": "SI",
+                    "selected": true
+                }]
+            }
+        }
+    ]
+}
+Hacer una función que devuelva un objeto por fecha solo con el numero de repuestas si.
+EJEMPLO DE SALIDA:
+{
+    "responses": [
+        {
+            "question": "¿te gusta el pan?",
+            "answers": {
+                "2020-01-01": 3,
+                "2020-02-02": 2
+            }
+        },
+        {
+            "question": "¿te gusta el queso?",
+            "answers": {
+                "2020-01-01": 1,
+                "2020-02-02": 2
+            }
+        }
+    ]
+}
+*/

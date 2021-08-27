@@ -75,7 +75,7 @@ const myArrayMapped = myArrayPersonas.map((person)=> person.name);
 console.log('Map de Nombres:', myArrayMapped)
 // Resultado -- > Map de Nombres: [ 'Alfredo', 'Gilberto', 'Marth', 'Tamara' ]
 
-//* Loanterior se uede realizar con una sola constante usando CADENAS
+//* Lo anterior se uede realizar con una sola constante usando CADENAS
 
 // const myArrayAll = myArrayPersonas.filter((person)=> person.age >=25).map((person)=> person.name);
 
