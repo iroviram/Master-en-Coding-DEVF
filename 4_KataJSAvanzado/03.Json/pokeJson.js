@@ -9879,3 +9879,22 @@ const pokeJSON = `
     "weight": 60
   }
 `;
+
+//* No puedo usar directamente un JSON
+//* Necesito convertirlo a un objeto de JavaScript
+//* JSON.parse recibe un string en formato JSON y devuelve un objeto de JS
+
+const myPokemon = JSON.parse(pokeJSON);
+
+//* Quiero encontrar los tipos del pokemon Pikachu
+console.log(myPokemon.types)
+
+const typePokemon = myPokemon.types.map((objeto)=>objeto.type.name);
+console.log("Name: ",typePokemon)
+
+// Encontrar las estadisticas del Pokemon
+const stats = myPokemon.stats.map((objeto)=>[objeto.stat.name,objeto.base_stat]);
+console.log(stats)
+
+// Filtrar las habilidades con estadisticas ARRIBA de 50
+console.log(stats.filter((stat)=>stat[1]>50));
