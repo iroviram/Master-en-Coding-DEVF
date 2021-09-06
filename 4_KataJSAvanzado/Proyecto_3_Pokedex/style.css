@@ -1,0 +1,62 @@
+body{
+    background-image: url(./images/pokedex_body_bg.png);
+    background-repeat: repeat;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+.content-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.column{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    width: 90%;
+    
+}
+
+.pokemon-list{
+    display: flex;
+    background-color: darkcyan;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.pokemon-box{
+    display: flex;
+    align-self: auto;
+    width: 160px;
+    height: 160px;
+    margin: 10px;
+    background-color: black;
+    background-size: 160px;
+}
+
+#pokemon-1{
+    background-image: url();
+}
+
+#pokemon-2{
+    background-image: url();
+}
+
+img.pokemon-box{
+    width: 160px;
+    height: 160px;
+}

@@ -1,4 +1,4 @@
-const pokemons = [{
+const pokemons = `{
     "id": 1,
     "name": {
       "english": "Bulbasaur",
@@ -17,7 +17,16 @@ const pokemons = [{
       "Sp. Attack": 65,
       "Sp. Defense": 65,
       "Speed": 45
-    }
+    },
+    "types": [
+      {
+        "slot": 1,
+        "type": {
+          "name": "electric",
+          "url": "https://pokeapi.co/api/v2/type/13/"
+        }
+      }
+    ]
   },
   {
     "id": 2,
@@ -16583,4 +16592,8 @@ const pokemons = [{
       "Speed": 34
     }
   }
-]
+`;
+const myPokemon = JSON.parse(pokemons);
+
+
+console.log(myPokemon.types)
