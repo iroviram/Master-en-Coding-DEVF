@@ -48,13 +48,9 @@ body{
     background-size: 160px;
 }
 
-#pokemon-1{
+/* #pokemon-1,#pokemon-2,#pokemon-3,#pokemon-4{
     background-image: url();
-}
-
-#pokemon-2{
-    background-image: url();
-}
+} */
 
 img.pokemon-box{
     width: 160px;
