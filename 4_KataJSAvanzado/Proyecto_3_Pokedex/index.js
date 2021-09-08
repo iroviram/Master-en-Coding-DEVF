@@ -11,7 +11,7 @@ function pokemonImage(pokemon){
     // let pokemonSpriteFront = pokemon['sprites']['front_default'];
     let pokemonSpriteFront = pokemon['sprites']['other']['official-artwork']['front_default'];
     let pokemonSpriteFrontString = pokemonSpriteFront.replace(/"/g,'')
-    return document.getElementById(`pokemon-${pokemonOrderNum}`).style.backgroundImage = `url(${pokemonSpriteFrontString})`;
+    document.getElementById(`pokemon-${pokemonOrderNum}`).style.backgroundImage = `url(${pokemonSpriteFrontString})`;
 }
 
 function pokemonNumberSearch(){

@@ -1,6 +1,6 @@
 //? First Form
 
-/* let promises = [];
+let promises = [];
 var numPokemonBoxes = document.querySelectorAll('li.pokemon-box').length
 for (let i = 1; i <= numPokemonBoxes; i++) {
   promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(response => response.json()));
@@ -25,17 +25,17 @@ function pokemonImage(pokemon){
 }
 
 fetchPokemon();
-window.onload = fetchPokemon; */
+window.onload = fetchPokemon;
 
 //? Second Form
 
-const URI = 'https://pokeapi.co/api/v2/pokemon/';
+/* const URI = 'https://pokeapi.co/api/v2/pokemon/';
 
-/* function consultarPokemon(id) {
+function consultarPokemon(id) {
     fetch(URI+id)
         .then(response => response.json())
         .then(pokemon => pokemonImage(pokemon));
-} */
+}
 
 function getPokemonByName(name){
     return new Promise((resolve,reject)=>{
@@ -57,5 +57,5 @@ async function getPokemonStatsByNameDos(pokemonName){
 }
 
 getPokemonStatsByNameDos("pikachu");
-window.onload = getPokemonStatsByNameDos;
+window.onload = getPokemonStatsByNameDos; */
 
