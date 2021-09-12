@@ -18,8 +18,8 @@
         <div class="container-fluid">
             <a class="navbar-brand">Navbar</a>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" placeholder="Search" id="searchBar" onkeyup="searchHidePokemon()">
+                <!-- <button class="btn btn-outline-success" id="searchButton" type="submit">Search</button> -->
             </form>
         </div>
     </nav>
@@ -180,6 +180,121 @@
             </ul>
         </div>
     </div>
+
+    <!-- MODAL -->
+
+<!--    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button> -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabelTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="modal-x-button"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="pokemon-details">
+                        <div class="pokemon-details-image" id="pokemonModalDetailsImage">
+
+                        </div>
+                        <div class="pokemon-stats" id="pokemonStats">
+                            <div class="pokemon-typenumber" id="pokemonTypeNumber">
+                                <div class="pokemon-type" id="pokemonType">
+
+                                </div>
+                                <span class="pokemon-number" id="pokemonNumber"></span>
+                            </div>
+                            <div class="pokemon-stats-numbers" id="pokemonStatsNumbers">
+                                <div class="pokemon-stats-bars" id="pokemonHp">
+                                    <span>HP</span>
+                                    <div class="stat-bar">
+                                        <div class="hp-bar" id="hpBar"></div>
+                                        <div class="hp-number" id="hpNumber"></div>
+                                    </div>
+                                </div>
+                                <div class="pokemon-stats-bars" id="pokemonAttach">
+                                    <span>Attach</span>
+                                    <div class="stat-bar">
+                                        <div class="attack-bar" id="attackBar"></div>
+                                        <div class="attack-number" id="attackNumber"></div>
+                                    </div>
+                                </div>
+                                <div class="pokemon-stats-bars" id="pokemonDefense">
+                                    <span>Defense</span>
+                                    <div class="stat-bar">
+                                        <div class="defense-bar" id="defenseBar"></div>
+                                        <div class="defense-number" id="defenseNumber"></div>
+                                    </div>
+                                </div>
+                                <div class="pokemon-stats-bars" id="pokemonSpecialAttack">
+                                    <span>Special Attack</span>
+                                    <div class="stat-bar">
+                                        <div class="special-attack-bar" id="special-attackBar"></div>
+                                        <div class="special-attack-number" id="special-attackNumber"></div>
+                                    </div>
+                                </div>
+                                <div class="pokemon-stats-bars" id="pokemonSpecialDefense">
+                                    <span>Special Defense</span>
+                                    <div class="stat-bar">
+                                        <div class="special-defense-bar" id="special-defenseBar"></div>
+                                        <div class="special-defense-number" id="special-defenseNumber"></div>
+                                    </div>
+                                </div>
+                                <div class="pokemon-stats-bars" id="pokemonSpeed">
+                                    <span>Speed</span>
+                                    <div class="stat-bar">
+                                        <div class="speed-bar" id="speedBar"></div>
+                                        <div class="speed-number" id="speedNumber"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="pokemon-profile-title" id="title-bars">Profile</h2>
+                    <div class="pokemon-profile" id="pokemonProfile">
+                        <div class="pokemon-profile-info" id="height-weight">
+                            <div class="info-name" id="height-name">Height:</div>
+                            <div class="info-number" id="height-number"></div>
+                            <div class="info-name" id="weight-name">Weight:</div>
+                            <div class="info-number" id="weight-number"></div>
+                        </div>
+                        <div class="pokemon-profile-info" id="captureRate-genderRatio">
+                            <div class="info-name" id="captureRate-name">Capture Rate:</div>
+                            <div class="info-number" id="captureRate-number"></div>
+                            <div class="info-name" id="genderRatio-name">Gender Ratio:</div>
+                            <div class="info-number" id="genderRatio-number"></div>
+                        </div>
+                        <div class="pokemon-profile-info" id="eggGroups-hatchSteps">
+                            <div class="info-name" id="eggGroups-name">Egg Groups:</div>
+                            <div class="info-number" id="eggGroups-number"></div>
+                            <div class="info-name" id="hatchSteps-name">Hatch Steps:</div>
+                            <div class="info-number" id="hatchSteps-number"></div>
+                        </div>
+                        <div class="pokemon-profile-info" id="abilities-evs">
+                            <div class="info-name" id="abilities-name">Abilities:</div>
+                            <div class="info-number" id="abilities-number"></div>
+                            <div class="info-name" id="evs-name">EVs:</div>
+                            <div class="info-number" id="evs-number"></div>
+                        </div>
+                    </div>
+                    <h2 class="type-damage-title" id="title-bars">Strenght/Weekness</h2>
+                    <div class="type-damage" id="typeDamage">
+                        <div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END MODAL -->
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

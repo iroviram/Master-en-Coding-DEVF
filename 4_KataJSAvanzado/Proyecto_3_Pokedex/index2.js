@@ -106,7 +106,7 @@ function insertPokemonSprites(arrayPokedexSprites){
 } */
 
 
-//? Fourth Form
+/* //? Fourth Form
 
 const URI = 'https://pokeapi.co/api/v2/pokemon/';
 
@@ -144,4 +144,7 @@ function pokemonNumberSearch(){
     for (let i = 1; i <= numPokemonBoxes; i++) {
         consultarPokemon(i)
     }
-}
+} */
+
+//? Fifth Form
+
