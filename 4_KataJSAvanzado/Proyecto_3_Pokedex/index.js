@@ -7,7 +7,7 @@ var pokemonCountMax = 3;
 const pokemonTypeColors = {
     grass: '#9BCC50',
     poison: '#B97FC9',
-    fire: '#B97FC9',
+    fire: '#FD7D24',
     flying: '#3DC7EF',
     bug: '#729F3F',
     water: '#4592C4',
@@ -65,11 +65,13 @@ function spanModalTypeCreator(types){
         document.getElementById(`pokemonType-${i}`).style.backgroundColor = `${pokemonTypeColors[typeName]}`
     }
     let typeName = types[0]['type']['name'];
-    document.getElementById("title-bars").style.backgroundColor = `${pokemonTypeColors[typeName]}`;
+    let h2TagName = document.getElementsByTagName("h2");
+    for (let i = 0; i < h2TagName.length; i++) {
+        h2TagName[i].style.backgroundColor = `${pokemonTypeColors[typeName]}`;
+    }
 }
 
 function weaknessTypeDivCreator(types){
-    console.log(types)
     for (let i = 0; i < types.length; i++) {
         let div = document.getElementById("typeDamage");
         let div1 = document.createElement("div");
@@ -80,7 +82,7 @@ function weaknessTypeDivCreator(types){
         node.setAttribute("id", `typeDamage-${typeName}`);
         //weaknessTypeSpanCreator(types,i);
     }
-}
+};
 
 function weaknessTypeSpanCreator(types,i){
         let div = document.getElementById(`typeDamage${i}`);
@@ -95,7 +97,7 @@ function weaknessTypeSpanCreator(types,i){
         document.getElementById(`typeDamageBar${i}`).style.backgroundColor = `${pokemonTypeColors[typeName]}`
 }
 
-function deleteSpanModal() {
+function deleteCreateModalElements() {
     const myNode = document.getElementById("pokemonType");
     while (myNode.firstChild) {
         myNode.removeChild(myNode.lastChild);
@@ -233,8 +235,6 @@ window.onclick = e => {
             pokemonStats(data);
             pokemonProfile1(data);
         })
-    } else if(clickTargetString=="modalxbutton"){
-        deleteSpanModal();
     }
 
     if(clickTargetString == "pokemonButton"){
@@ -243,10 +243,21 @@ window.onclick = e => {
         .then(response => response.json())
         .then(function(data){
             pokemonProfile2(data);
+            let dataURL = data.evolution_chain.url;
+            let evolvesFrom = data.evolves_from_species;
+            if (evolvesFrom == null){
+                pokemonEvolutions(dataURL,null);
+            } else{
+                pokemonEvolutions(dataURL,evolvesFrom);
+            }
+            
         })
-    } else if(clickTargetString=="modalxbutton"){
-        deleteSpanModal();
     }
+
+    if(clickTargetString=="modalxbutton" || clickTargetString=="exampleModal"){
+        deleteCreateModalElements();
+    }
+    
 };
 
 function pokemonImage(pokemon,id){
@@ -263,6 +274,9 @@ function pokemonImage(pokemon,id){
     document.getElementById(`pokemonName-${id}`).innerHTML = `${pokemon['species']['name']}`;
     let typeName = pokemon['types'][0]['type']['name'];
     document.getElementById(`pokemonName-${id}`).style.backgroundColor = `${pokemonTypeColors[typeName]}`;
+/*     if (pokemon['types'].length > 0){
+        document.getElementById(`pokemonName-${id}`).style.background = `linear-gradient(to right, ${pokemonTypeColors[pokemon['types'][0]['type']['name']]} 50%, ${pokemonTypeColors[pokemon['types'][1]['type']['name']]} 50%`;
+    } */
 }
 
 function pokemonImageModal(data) {
@@ -282,30 +296,6 @@ function pokemonNumberSearch(){
     }
 }
 
-/* function searchHidePokemon() {
-
-    const pokemonSearched = document.getElementById("searchBar").value.toLowerCase();
-    if (pokemonSearched === '') {
-        for (let i = 1; i <= pokemonCountMax; i++) {
-            document.getElementById(`pokemon-${i}`).style.display = "";      
-        }  
-    } else {
-        for (let i = 0; i < pokemonCountMax; i++) {
-        let j = pokemonSearched.length;
-        let pokemonName = document.getElementById(`pokemonName-${i+1}`).innerHTML;
-        let letterPokemonName = pokemonName.charAt(j-1);
-        let letterPokemonSearched = pokemonSearched.charAt(j-1);
-        console.log("letterPokemon Name: ",letterPokemonName)
-        console.log("letter Pokemon SSearched: ",letterPokemonSearched)
-        console.log("count: ", i)
-        
-            if (letterPokemonSearched !== letterPokemonName) {
-                document.getElementById(`pokemon-${i+1}`).style.display = "none";
-            }
-        }
-    }  
-}; */
-
 function searchHidePokemon() {
 
     const pokemonSearched = document.getElementById("searchBar").value.toLowerCase();
@@ -319,10 +309,246 @@ function searchHidePokemon() {
         let pokemonName = document.getElementById(`pokemonName-${i+1}`).innerHTML;
         let letterPokemonName = pokemonName.charAt(j-1);
         let letterPokemonSearched = pokemonSearched.charAt(j-1);
-        
             if (letterPokemonSearched !== letterPokemonName) {
                 document.getElementById(`pokemon-${i+1}`).style.display = "none";
             }
         }
+    }
+};
+
+function pokemonEvolutions(data,evolvesFrom){
+    fetch(data)
+    .then(response => response.json())
+    .then(function(data){        
+        let checkEvolution1 = data['chain']['evolves_to']
+        //let checkEvolution2 = data['chain']['evolves_to'][0]['evolves_to'];
+        
+        if(checkEvolution1 == "" && evolvesFrom == null){
+            console.log("No Evolution nor Preevolution")
+            hidePokemonEvolution();
+            document.getElementById("noEvolution").style.display = "";
+            document.getElementById("noEvolution").innerHTML = "NO EVOLUTION";
+        } else if(data['chain']['evolves_to'][0]['evolves_to'] == "" && evolvesFrom == null){
+            console.log("No Preevolution / 1 Evolution  ")
+            let clickedPokemon = data['chain']['species']['name'];
+            let evolution1 = data['chain']['evolves_to'][0]['species']['name'];
+            showPokemonEvolution1()
+            hidePokemonEvolution2();
+            pokemonEvolutionsImage1(clickedPokemon,null,evolution1,null,checkEvolution1)
+        } else if (evolvesFrom == null){
+            console.log("No Preevolution / 2 Evolutions")
+            let clickedPokemon = data['chain']['species']['name'];
+            let evolution1 = data['chain']['evolves_to'][0]['species']['name'];
+            let evolution2 = data['chain']['evolves_to'][0]['evolves_to'][0]['species']['name'];
+            showPokemonEvolution()
+            pokemonEvolutionsImage2(clickedPokemon,null,evolution1,evolution2,checkEvolution1)
+        } else if (data['chain']['evolves_to'][0]['evolves_to'] == ""){
+            console.log("1 Preevolution / 1 Evolution")
+            let preevolution = evolvesFrom;
+            let evolution1 = data['chain']['evolves_to'][0]['species']['name'];
+            showPokemonEvolution1()
+            hidePokemonEvolution2();
+            pokemonEvolutionsImage3(null,preevolution,evolution1,null,checkEvolution1)
+        } else {
+            console.log("3 Evolution Phases");
+            let preevolution = evolvesFrom;
+            let evolution1 = data['chain']['evolves_to'][0]['species']['name'];
+            let evolution2 = data['chain']['evolves_to'][0]['evolves_to'][0]['species']['name'];
+            let basePokemon = data['chain']['species']['name'];
+            showPokemonEvolution();
+            pokemonEvolutionsImage4(null,preevolution,evolution1,evolution2,basePokemon,checkEvolution1)
+        }           
+    });
+};
+
+function hidePokemonEvolution() {
+    document.getElementById("evolutionRow1").style.display = "none";
+    document.getElementById("evolutionDescription").style.display = "none";
+    document.getElementById("evolutionRow2").style.display = "none";
+    document.getElementById("evolutionDescription1").style.display = "none";
+};
+
+function hidePokemonEvolution2() {
+    document.getElementById("evolutionRow2").style.display = "none";
+    document.getElementById("noEvolution").style.display = "none";
+};
+
+function showPokemonEvolution() {
+    document.getElementById("evolutionRow1").style.display = "";
+    document.getElementById("evolutionDescription").style.display = "";
+    document.getElementById("evolutionRow2").style.display = "";
+    document.getElementById("evolutionDescription1").style.display = "";
+
+    document.getElementById("noEvolution").style.display = "none";
+};
+
+function showPokemonEvolution1() {
+    document.getElementById("evolutionRow1").style.display = "";
+    document.getElementById("evolutionDescription").style.display = "";
+
+    document.getElementById("noEvolution").style.display = "none";
+};
+
+function showPokemonEvolution2() {
+    document.getElementById("evolutionRow2").style.display = "";
+    document.getElementById("evolutionDescription1").style.display = "";
+    
+    document.getElementById("noEvolution").style.display = "none";
+};
+
+function pokemonEvolutionsImage1(clickedPokemon,preevolution,evolution1,evolution2,evolutionData) {
+
+    let capitalizedEvolution1Name = evolution1.replace(/\b\w/g, l => l.toUpperCase());
+    let capatilzedPreevolutionName = clickedPokemon.replace(/\b\w/g, l => l.toUpperCase());
+
+    pokemonEvolutionDiv1();
+    pokemonPreevolutionImage(clickedPokemon,null);
+    pokemonEvolutionImage(evolution1,null);
+
+    let evolution1Level = evolutionData[0]['evolution_details'][0]['min_level']
+
+    document.getElementById("evolutionDescriptionText").innerHTML = `${capatilzedPreevolutionName} evolves into ${capitalizedEvolution1Name} at level ${evolution1Level}`;
+
+};
+
+function pokemonEvolutionsImage2(clickedPokemon,preevolution,evolution1,evolution2,evolutionData) {
+
+    let capitalizedEvolution1Name = evolution1.replace(/\b\w/g, l => l.toUpperCase());
+    let capitalizedEvolution2Name = evolution2.replace(/\b\w/g, l => l.toUpperCase());
+    let capatilzedPreevolutionName = clickedPokemon.replace(/\b\w/g, l => l.toUpperCase());
+
+    console.log(evolutionData)
+
+    let evolution1Level = evolutionData[0]['evolution_details'][0]['min_level']
+    let evolution2Level = evolutionData[0]['evolves_to'][0]['evolution_details'][0]['min_level']
+
+    pokemonEvolutionDiv1();
+    pokemonEvolutionDiv2();
+    pokemonPreevolutionImage(clickedPokemon,evolution1);
+    pokemonEvolutionImage(evolution1,evolution2);
+
+    document.getElementById("evolutionDescriptionText").innerHTML = `${capatilzedPreevolutionName} evolves into ${capitalizedEvolution1Name} at level ${evolution1Level}`;
+    document.getElementById("evolutionDescriptionText1").innerHTML = `${capitalizedEvolution1Name} evolves into ${capitalizedEvolution2Name} at level ${evolution2Level}`;
+};
+
+function pokemonEvolutionsImage3(clickedPokemon,preevolution,evolution1,evolution2,evolutionData) {
+
+    let preevolutionName = preevolution['name'];
+    let capatilzedPreevolutionName = preevolutionName.replace(/\b\w/g, l => l.toUpperCase());
+    let capitalizedEvolution1Name = evolution1.replace(/\b\w/g, l => l.toUpperCase());
+
+    pokemonEvolutionDiv1();
+    pokemonPreevolutionImage(preevolutionName,null);
+    pokemonEvolutionImage(evolution1,null);
+
+    let evolution1Level = evolutionData[0]['evolution_details'][0]['min_level']
+
+    document.getElementById("evolutionDescriptionText").innerHTML = `${capatilzedPreevolutionName} evolves into ${capitalizedEvolution1Name} at level ${evolution1Level}`;
+};
+
+function pokemonEvolutionsImage4(clickedPokemon,preevolution,evolution1,evolution2,basePokemon,evolutionData) {
+
+    let preevolutionName = preevolution['name'];
+
+    let capitalizedEvolution1Name = evolution1.replace(/\b\w/g, l => l.toUpperCase());
+    let capitalizedEvolution2Name = evolution2.replace(/\b\w/g, l => l.toUpperCase());
+    let capatilzedPreevolutionName = preevolutionName.replace(/\b\w/g, l => l.toUpperCase());
+    let capitalizedBasePokemon = basePokemon.replace(/\b\w/g, l => l.toUpperCase());
+
+    let evolution1Level = evolutionData[0]['evolution_details'][0]['min_level']
+    let evolution2Level = evolutionData[0]['evolves_to'][0]['evolution_details'][0]['min_level']
+    
+    pokemonEvolutionDiv1();
+    pokemonEvolutionDiv2();
+
+    if(evolution1 == preevolutionName){
+        pokemonPreevolutionImage(basePokemon,evolution1);
+        pokemonEvolutionImage(evolution1,evolution2);
+    
+        document.getElementById("evolutionDescriptionText").innerHTML = `${capitalizedBasePokemon} evolves into ${capitalizedEvolution1Name} at level ${evolution1Level}`;
+        document.getElementById("evolutionDescriptionText1").innerHTML = `${capitalizedEvolution1Name} evolves into ${capitalizedEvolution2Name} at level ${evolution2Level}`;
+    } else {
+        pokemonPreevolutionImage(preevolutionName,evolution1);
+        pokemonEvolutionImage(evolution1,evolution2);
+    
+        document.getElementById("evolutionDescriptionText").innerHTML = `${capatilzedPreevolutionName} evolves into ${capitalizedEvolution1Name} at level ${evolution1Level}`;
+        document.getElementById("evolutionDescriptionText1").innerHTML = `${capitalizedEvolution1Name} evolves into ${capitalizedEvolution2Name} at level ${evolution2Level}`;
+    }
+};
+
+function pokemonEvolutionDiv1() {
+    let div = document.getElementById("evolutionRow1");
+    let span = document.createElement("span");
+    div.appendChild(span);
+    let node = div.getElementsByTagName("span")[0];
+    node.setAttribute("class", "pokemon-preevolution");
+    node.setAttribute("id", "pokemonPreevolution");
+
+    let span1 = document.createElement("span");
+    div.appendChild(span1);
+    let node1 = div.getElementsByTagName("span")[1];
+    node1.setAttribute("class", "evolution-arrow");
+    node1.setAttribute("id", "evolutionArrow");
+
+    let span2 = document.createElement("span");
+    div.appendChild(span2);
+    let node2 = div.getElementsByTagName("span")[2];
+    node2.setAttribute("class", "pokemon-evolution");
+    node2.setAttribute("id", "pokemonEvolution");
+};
+
+function pokemonEvolutionDiv2() {
+    let div = document.getElementById("evolutionRow2");
+    let span = document.createElement("span");
+    div.appendChild(span);
+    let node = div.getElementsByTagName("span")[0];
+    node.setAttribute("class", "pokemon-preevolution");
+    node.setAttribute("id", "pokemonPreevolution1");
+
+    let span1 = document.createElement("span");
+    div.appendChild(span1);
+    let node1 = div.getElementsByTagName("span")[1];
+    node1.setAttribute("class", "evolution-arrow");
+    node1.setAttribute("id", "evolutionArrow1");
+
+    let span2 = document.createElement("span");
+    div.appendChild(span2);
+    let node2 = div.getElementsByTagName("span")[2];
+    node2.setAttribute("class", "pokemon-evolution");
+    node2.setAttribute("id", "pokemonEvolution1");
+};
+
+function pokemonPreevolutionImage(preevolution,evolution1) {
+    fetch(URIpokemon+preevolution)
+        .then(response => response.json())
+        .then(function(data){
+            let pokemonSpriteFront = data['sprites']['other']['official-artwork']['front_default'];
+            document.getElementById("pokemonPreevolution").style.backgroundImage = `url(${pokemonSpriteFront})`;
+        });
+
+    if (evolution1 !== null) {
+        fetch(URIpokemon+evolution1)
+        .then(response => response.json())
+        .then(function(data){
+            let pokemonSpriteFront = data['sprites']['other']['official-artwork']['front_default'];
+            document.getElementById("pokemonPreevolution1").style.backgroundImage = `url(${pokemonSpriteFront})`;
+        });
+    }
+};
+
+function pokemonEvolutionImage(evolution1,evolution2) {
+    fetch(URIpokemon+evolution1)
+        .then(response => response.json())
+        .then(function(data){
+            let pokemonSpriteFront = data['sprites']['other']['official-artwork']['front_default'];
+            document.getElementById("pokemonEvolution").style.backgroundImage = `url(${pokemonSpriteFront})`;
+        });
+    if (evolution2 !== null) {
+        fetch(URIpokemon+evolution2)
+        .then(response => response.json())
+        .then(function(data){
+            let pokemonSpriteFront = data['sprites']['other']['official-artwork']['front_default'];
+            document.getElementById("pokemonEvolution1").style.backgroundImage = `url(${pokemonSpriteFront})`;
+        });
     }
 };
