@@ -9,7 +9,7 @@ const URIpokemon = 'https://pokeapi.co/api/v2/pokemon/';
 const URIpokemonSpecies = 'https://pokeapi.co/api/v2/pokemon-species/';
 //const URItypes = 'https://pokeapi.co/api/v2/type/';
 
-var pokemonCountMax = 6;
+var pokemonCountMax = 151;
 
 const pokemonTypeColors = {
     grass: '#9BCC50',
@@ -36,6 +36,8 @@ const pokemonTypeColors = {
 window.onload = liPokemonCreator;
 
 function liPokemonCreator() {
+
+    
 
     for (let i = 1; i <= pokemonCountMax; i++) {
         let ul = document.getElementById("listaPokemon");
@@ -597,5 +599,5 @@ function searchHidePokemon() {
     }
 };
 
-//console.log(document.querySelectorAll('#listaPokemon')[0]['children'])
+console.log(document.querySelectorAll('#listaPokemon')[0]['children'])
 
