@@ -1,0 +1,14 @@
+Webpack
+
+npm init -y
+npm i webpack webpack-cli --save-dev
+npm i webpack-dev-server --save-dev
+npm i html-webpack-plugin html-loader --save-dev
+npm i @babel/core babel-loader @babel/preset-env --save-dev
+npm i file-loader --save-dev
+npm i node-sass style-loader css-loader sass-loader mini-css-extract-plugin --save-dev
+npm i axios
+npm install --save bootstrap
+npm install --save jquery popper.js
+npm install --save-dev postcss-loader postcss
+npm install postcss-cli autoprefixer

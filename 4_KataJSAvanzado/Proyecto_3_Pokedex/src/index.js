@@ -9,7 +9,7 @@ const URIpokemon = 'https://pokeapi.co/api/v2/pokemon/';
 const URIpokemonSpecies = 'https://pokeapi.co/api/v2/pokemon-species/';
 //const URItypes = 'https://pokeapi.co/api/v2/type/';
 
-var pokemonCountMax = 151;
+var pokemonCountMax = 3;
 
 const pokemonTypeColors = {
     grass: '#9BCC50',
@@ -574,7 +574,7 @@ function pokemonEvolutionImage(evolution1,evolution2) {
 
 /* ----------- Modal Button Click - END ----------- */
 
-function searchHidePokemon() {
+/* function searchHidePokemon() {
 
     const pokemonSearched = document.getElementById("searchBar").value.toLowerCase();
     if (pokemonSearched === '') {
@@ -597,7 +597,21 @@ function searchHidePokemon() {
             }
         }
     }
-};
+}; */
 
 console.log(document.querySelectorAll('#listaPokemon')[0]['children'])
 
+$(".search").keyup(() => {
+
+    var value = $(".search").val().toLowerCase()
+
+    $(".pokemon-list").children('.pokemon-box').each((index,element)=>{
+    if(!$(element).attr('id').startsWith(value)){
+        $(element).hide();
+    }
+    else{
+        $(element).show();
+    }
+
+    })
+})
