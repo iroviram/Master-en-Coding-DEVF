@@ -1,17 +1,19 @@
 import axios from 'axios';
 import 'bootstrap';
+import './styles/main.scss';
 import Pokedex from './pokedex';
 
 function init(){ //App Start
     //Solicitar los datos de los Pokemon
-    const pokemonCount = 10;
+    const pokemonCount = 25;
     const URI = `https://pokeapi.co/api/v2/pokemon?limit=${pokemonCount}&offset=0'`;
     axios.get(URI)
         .then((response)=>{
             console.log("Status Code:", response.status);
             //La data esta en: response.data.results
             console.log("La Data es:", response.data.results);
-            const pokedex = new Pokedex(response.data.results)
+            const pokedex = new Pokedex(response.data.results);
+            pokedex.createPokedex();
         }).catch((error)=>{
             console.log("Error:",error);
         })

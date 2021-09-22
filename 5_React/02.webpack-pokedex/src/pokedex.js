@@ -7,7 +7,7 @@ class Pokedex{
     };
 
     //Metodo que me ayuda a colocar hasta 3 ceros en un id del pokemon
-    addZerostoId(id){
+    addZerosToId(id){
         if(id<10){
             //agrego 2 ceros al ID
             return '00' + id;
@@ -110,8 +110,12 @@ class Pokedex{
     //Genero la lista de tarjetas de Pokemon
     //y la va a pintar en pantalla (lo anade al DOM)
     getPokemonCardList(){
+        let pokedexQuery = document.querySelector('pokedex');
+        console.log(pokedexQuery);
         let pokedex = document.getElementById('pokedex');
         pokedex.innerHTML="";
+        
+        
 
         this._pokemons.forEach(pokemon => {
             this.singlePokemonCard(pokemon)
