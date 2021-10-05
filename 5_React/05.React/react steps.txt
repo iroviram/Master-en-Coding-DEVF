@@ -1,7 +1,0 @@
-1. setup del proyecto
-
-terminal
-npx create-react-app 05.react-giphy
-https://developers.giphy.com/
-create app
-API Key - XrydP9FDbQMuqSb3wnb3RW529VmTMPEy
