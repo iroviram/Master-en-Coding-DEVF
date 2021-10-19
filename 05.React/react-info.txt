@@ -1,0 +1,11 @@
+React -> librería o Biblioteca
+React -> 100%
+React -> JSX
+HTML +JAVASCRIPT
+npm
+AXIOS , REACT-ROUTER-DOM
+Librería -> una sola cosa a la vez
+framewrok -> podemos hacer varias cosas a la vez, ya traen sus reglas y sus formas de trabajar
+
+Hook
+HOOK -> podemos compartir lógica entre componentes
