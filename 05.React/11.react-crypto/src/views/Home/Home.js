@@ -25,6 +25,7 @@ const Home = () => {
     const filteredCoins = coins && coins.filter(coin => 
             coin.name.toLowerCase().includes(search.toLowerCase())
         );
+    console.log(filteredCoins)
 
     return (
         <>

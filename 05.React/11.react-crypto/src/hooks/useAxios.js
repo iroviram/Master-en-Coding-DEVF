@@ -33,7 +33,6 @@ function useAxios (axiosParams) {
         }
     };
 
-
     useEffect(() => {
         fetchData(axiosParams);
     }, []); // execute once only
