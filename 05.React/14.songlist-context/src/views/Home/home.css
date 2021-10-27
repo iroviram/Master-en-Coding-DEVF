@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
-    height: 100vh;
+    height: 100%;
     color: #D8D8D8;
+    background-color: #222222;
 }
 
 .izquierdo{
@@ -14,4 +15,6 @@
 .derecho{
     background-color: #444444;
     width: 50%;
+    position: fixed;
+    right: 0px;
 }
