@@ -1,11 +1,30 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
+import axios from 'axios'
+import useForm from '../Hook/useForm'
+import {useHistory} from 'react-router'
 
 function Login() {
+
+    let history = useHistory();
+    const sendData = (data) =>{
+        axios.post("https://ecomerce-master.herokuapp.com/api/v1/login", data)
+            .then((response) =>{
+                console.log(response.data)
+                window.localStorage.setItem("token",response.data.token)
+                history.push('/');
+            })
+            .catch((error)=>{
+                alert(error.response.data.message)
+            })
+    }
+
+    const {input,handleInputChange,handleSubmit} = useForm(sendData,{})
+
     return (
         <div>
             <Navbar/>
-            <form onSubmit="">
+            <form onSubmit={handleSubmit}>
                 <div className="container">
                     <div className="row justifiy-content-center">
                         <div className="col-md-10">
@@ -14,8 +33,10 @@ function Login() {
                                 <input 
                                     type="email" 
                                     className="form-control"
-                                    value=""
-                                    onChange=""
+                                    value={input.email}
+                                    onChange={handleInputChange}
+                                    name="email"
+                                    id="email"
                                 />
                             </div>
                         </div>
@@ -26,8 +47,10 @@ function Login() {
                                 <input 
                                     type="password" 
                                     className="form-control"
-                                    value=""
-                                    onChange=""
+                                    value={input.password}
+                                    onChange={handleInputChange}
+                                    name="password"
+                                    id="password"
                                 />
                             </div>
                         </div>

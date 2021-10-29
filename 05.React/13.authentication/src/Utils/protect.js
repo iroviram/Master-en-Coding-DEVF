@@ -3,7 +3,7 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 
-function HOC(Component) {
+function protect(Component) {
     const token = window.sessionStorage.getItem('token');
 
     //*CREAMOS UNA FUNCION LE VAMOS A PASAR LOS PROPS DEL USUARIO Y LO DIRECCIONAMOS
@@ -15,4 +15,4 @@ function HOC(Component) {
     return WrappedComponent
 }
 
-export default HOC
+export default protect
