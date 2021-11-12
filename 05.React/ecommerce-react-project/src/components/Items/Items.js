@@ -9,6 +9,11 @@ const Items = ({
     brand,
     price
 }) => {
+
+    if(image == null){
+        return image = "No Image Found"
+    }
+
     return (
         <Router>
             <Switch>

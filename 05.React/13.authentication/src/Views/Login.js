@@ -2,41 +2,40 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import axios from 'axios'
 import useForm from '../Hook/useForm'
-import {useHistory} from 'react-router'
+import { useHistory } from 'react-router'
 
 function Login() {
 
     let history = useHistory();
-    const sendData = (data) =>{
+    const sendData = (data) => {
         axios.post("https://ecomerce-master.herokuapp.com/api/v1/login", data)
-            .then((response) =>{
-                console.log(response.data)
-                window.localStorage.setItem("token",response.data.token)
-                history.push('/');
-            })
-            .catch((error)=>{
-                alert(error.response.data.message)
-            })
+        .then((response) => {
+            console.log(response.data);
+            window.localStorage.setItem("token", response.data.token )
+            history.push('/');
+        })
+        .catch((error)=>{
+            alert(error.response.data.message)
+        })
     }
 
-    const {input,handleInputChange,handleSubmit} = useForm(sendData,{})
+    const {input, handleInputChange, handleSubmit} = useForm (sendData,{})
 
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <form onSubmit={handleSubmit}>
-                <div className="container">
+                <div className="cointainer">
                     <div className="row justifiy-content-center">
+
                         <div className="col-md-10">
                             <div className="form-group">
                                 <label htmlFor="">Email</label>
-                                <input 
-                                    type="email" 
-                                    className="form-control"
-                                    value={input.email}
-                                    onChange={handleInputChange}
+                                <input type="email"
                                     name="email"
-                                    id="email"
+                                    className="form-control"
+                                    value={input.email}                             
+                                    onChange={handleInputChange}
                                 />
                             </div>
                         </div>
@@ -44,25 +43,25 @@ function Login() {
                         <div className="col-md-10">
                             <div className="form-group">
                                 <label htmlFor="">Password</label>
-                                <input 
-                                    type="password" 
-                                    className="form-control"
-                                    value={input.password}
-                                    onChange={handleInputChange}
+                                <input type="password"
                                     name="password"
-                                    id="password"
+                                    className="form-control"
+                                    value={input.password}  
+                                    onChange={handleInputChange}
                                 />
                             </div>
                         </div>
 
                         <div className="col-md-10 text-center">
-                            <button type="submit" className="btn btn-dark">Enviar</button>
-                        </div>
+                                <button type="submit" className="btn btn-dark">Enviar</button>
+                        </div>           
 
                     </div>
                 </div>
+
             </form>
         </div>
+       
     )
 }
 
